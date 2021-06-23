@@ -1,12 +1,10 @@
-from flask import Flask, redirect, request
+from flask import Flask, request, render_template
 
 from  youtube_dl import YoutubeDL
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-
+def get_video_link(youtube_video_id):
     options = {
         'quiet': True,
         'forceurl': True,
@@ -16,14 +14,21 @@ def index():
 
     with YoutubeDL(options) as yd:
 
-        youtube_video_id = request.args.get('v')
-
         youtube_video_file_url = yd.extract_info(
             youtube_video_id,
             download=False
         )['url']
 
-        return redirect(youtube_video_file_url)
+    return youtube_video_file_url
+
+
+@app.route('/')
+def index():
+
+    youtube_video_id = request.args.get('v')
+    youtube_video_file_url = get_video_link(youtube_video_id)
+
+    return render_template('index.html', video_url=youtube_video_file_url)
 
 if __name__ == '__main__':
 

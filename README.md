@@ -27,7 +27,5 @@ Run `python3 ./main.py`.
 
 And, visit `http://localhost:5000/?v=JJo-zUi9E5U`.
 
-You'll redirect to the original link like `https://r3---sn-un57sn7z.googlevideo.com/videoplayback...`.
-
 ![example](./docs/example.png)
 

@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <p>{{video_url}}</p>
+        <video
+            id="video"
+            class="video-js"
+            controls
+            preload="auto"
+            width="640"
+            height="390"
+            data-setup="{}"
+        >
+        <source src="{{video_url}}" type="video/mp4" />
+
+        </video>
+
+        <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+    </body>
+
+</html>
