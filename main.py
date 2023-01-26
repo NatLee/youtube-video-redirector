@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 
-from  youtube_dl import YoutubeDL
+from yt_dlp import YoutubeDL
 
 app = Flask(__name__)
 
